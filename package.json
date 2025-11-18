@@ -1,0 +1,27 @@
+{
+  "name": "next-monorepo-vercel-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "description",
+  "author": "aspiral20",
+  "scripts": {
+    "start": "turbo start",
+    "dev": "turbo dev",
+    "dev-user": "turbo dev --filter=user",
+    "dev-admin": "turbo dev --filter=admin",
+    "build": "turbo build",
+    "build-user": "turbo build --filter=user",
+    "build-admin": "turbo build --filter=admin",
+    "turbo-login": "npx turbo login",
+    "turbo-link": "npx turbo link",
+    "turbo-unlink": "npx turbo unlink"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^2.5.8"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "packages/*"
+  ]
+}
