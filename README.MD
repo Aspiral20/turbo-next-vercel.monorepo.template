@@ -2,7 +2,7 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
-#### ~ Structure ~
+## Project Structure
 ```
 /
 ├── package.json               # Root workspace config (Turbo + Yarn workspaces)
@@ -34,51 +34,47 @@ The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` u
 
 ```
 
-### 0. Change the directory for micro-services inside `package.json` file in root directory of your project..
+# Explanation of Each Part
 
-`package.json`
-```json
-{
-  "workspaces": [
-    "packages/*"
-  ]
-}
-```
+A quick explanation of each part of the project structure.
 
-### 1. Install dependencies
+## Root
 
-```bash
-yarn install
-```
+---
 
-### 2. Create micro-frontend
+| File            | Purpose                                                                      |
+| --------------- | ---------------------------------------------------------------------------- |
+| `package.json`  | Defines Yarn workspaces (`packages/*`) for micro-frontends + shared packages |
+| `turbo.json`    | Defines build / dev pipeline across micro-frontends                          |
+| `tsconfig.json` | Shared TypeScript configuration (optional)                                   |
 
-Create new Next.js micro-frontend.
+## Packages
 
-```bash
-npx create-next-app@latest ./packages/micro-frontend
-```
+---
 
-### 3. Configure package.json files for your project and micro-frontends
+This folder contains:
+1. Shared package 
+   -  Reusable code across micro-frontends 
+   - Must be added to transpilePackages and dependencies of each frontend 
+2. Micro-frontends 
+   - Independent Next.js apps 
+   - Can be deployed individually to Vercel 
+   - Have their own configs (next.config, vercel.json, tsconfig)
 
-Change the name of the project in package.json files. For example: name, description, author, version...
+## Micro-Frontend Requirements
 
-`packages/shared` - shared code between micro-frontends.
+---
 
-If you want to add the `shared packages` for your micro frontends (which you will use in micro-frontends) you should add the configuration for directory of `shared package` to each micro-frontend.
+Each micro-frontend must include:
 
-#### How to add new `shared package` to your micro-frontend ?
-
-1. Add the directory of `shared package` to `transpilePackages` in `next.config.ts` file of your micro-frontend.
+1. Transpile shared packages (`next.config.js/ts`)
 ```ts
-const nextConfig: NextConfig = {
+const nextConfig = {
   transpilePackages: ["shared"],
 };
 ```
 
-2. Add the `shared package` to `dependencies` in `package.json` file of your micro-frontend.
-
-`packages/micro-frontend/package.json`
+2. Add shared package as dependency (`package.json`)
 ```json
 {
   "dependencies": {
@@ -87,9 +83,7 @@ const nextConfig: NextConfig = {
 }
 ```
 
-### Deployment on Vercel (optional)
-
-`packages/micro-frontend/vercel.json`
+3. Optional Vercel config
 ```json
 {
   "installCommand": "yarn install",
@@ -98,16 +92,13 @@ const nextConfig: NextConfig = {
 }
 ```
 
-### Commands (from root directory)
+## Turborepo Commands
 
-#### Run dev all micro-frontends
+---
 
-```bash
-yarn dev
-```
+From the root:
 
-#### Build all micro-frontends
-
-```bash
-yarn build
-```
+| Command | Description |
+| ------- | ----------- |
+| `yarn dev` | Run dev all micro-frontends |
+| `yarn build` | Build all micro-frontends |
