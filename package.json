@@ -1,9 +1,10 @@
 {
+  "version": "0.0.1",
   "name": "next-monorepo-vercel-template",
-  "version": "1.0.0",
-  "private": true,
   "description": "description",
   "author": "aspiral20",
+  "license": "ISC",
+  "private": true,
   "scripts": {
     "start": "turbo start",
     "dev": "turbo dev",
@@ -16,7 +17,6 @@
     "turbo-link": "npx turbo link",
     "turbo-unlink": "npx turbo unlink"
   },
-  "license": "ISC",
   "devDependencies": {
     "turbo": "^2.5.8"
   },
