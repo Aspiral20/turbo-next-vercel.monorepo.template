@@ -2,6 +2,38 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
+#### ~ Structure ~
+```
+/
+├── package.json               # Root workspace config (Turbo + Yarn workspaces)
+├── turbo.json                 # Turborepo pipeline config
+├── tsconfig.json              # Root TypeScript config (optional)
+├── yarn.lock
+├── packages/                  # All micro-frontends + shared packages live here
+│   ├── shared/                # Shared utilities, UI, hooks, types, etc.
+│   │   ├── package.json
+│   │   └── src/
+│   │
+│   ├── micro-frontend-a/      # Example micro-frontend (Next.js app)
+│   │   ├── package.json
+│   │   ├── next.config.js/ts  # Transpile shared packages here
+│   │   ├── public/
+│   │   ├── src/
+│   │   ├── tsconfig.json
+│   │   └── vercel.json        # Optional deployment config
+│   │
+│   └── micro-frontend-b/      # Another micro-frontend (optional)
+│       ├── package.json
+│       ├── next.config.js/ts
+│       ├── public/
+│       ├── src/
+│       ├── tsconfig.json
+│       └── vercel.json
+│
+└── README.md
+
+```
+
 ### 0. Change the directory for micro-services inside `package.json` file in root directory of your project..
 
 `package.json`
