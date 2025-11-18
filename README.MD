@@ -2,6 +2,8 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
+Package Manager: [Yarn](https://yarnpkg.com/)
+
 ## Project Structure
 ```
 /
