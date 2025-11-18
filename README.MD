@@ -2,7 +2,16 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
-Package Manager: [Yarn](https://yarnpkg.com/)
+## All Technologies
+
+- Package Manager: [Yarn](https://yarnpkg.com/)
+- Monorepo Builder: [Turbo](https://turborepo.org/)
+- React Framework: [Next.js](https://nextjs.org/)
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- Styles: [TailwindCSS](https://tailwindcss.com/)
+- Linter: [Biome](https://github.com/vercel/biome)
+- Formatting: [Biome](https://github.com/vercel/biome)
+- Deployment: [Vercel](https://vercel.com/)
 
 ## Project Structure
 ```
