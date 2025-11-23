@@ -22,6 +22,8 @@ const envs: LocalConfigType<EnvsConfigChildrenType> = {
   server: {
     ENV: process.env.NEXT_PUBLIC_NEXT_ENV ?? 'NEXT_PUBLIC_NEXT_ENV',
     ...commonEnvs,
+    GITHUB_ID: process.env.GITHUB_ID ?? 'GITHUB_ID',
+    GITHUB_SECRET: process.env.GITHUB_SECRET ?? 'GITHUB_SECRET',
     NEXT_AUTH_SECRET: process.env.NEXT_AUTH_SECRET ?? 'NEXT_AUTH_SECRET',
   },
   /** Only client **/

@@ -6,6 +6,8 @@ export type EnvsConfigChildrenType = {
   ENV: string;
   FRONT_URL: string;
   API_URL: string;
+  GITHUB_ID?: string;
+  GITHUB_SECRET?: string;
   NEXT_AUTH_SECRET?: string;
 };
 

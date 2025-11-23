@@ -2,6 +2,8 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
+#### branch: `feat/next-auth`: view `docs` -> `web-security` for more information.
+
 ## All Technologies
 
 - Package Manager: [Yarn](https://yarnpkg.com/)

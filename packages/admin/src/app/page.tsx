@@ -1,8 +1,45 @@
+'use client'
+import { MouseEventHandler, useState } from "react";
+import { signIn, useSession } from "next-auth/react"
+import { signOut } from "next-auth/react"
 import Image from "next/image";
 
 export default function Home() {
+  const { data: session } = useSession();
+  const [isLoading, setIsLoading] = useState(false);
+  // console.log("client:", { session })
+
+  const logOutClick: MouseEventHandler<HTMLButtonElement> = async (e) => {
+    e.preventDefault();
+    setIsLoading(true)
+    try {
+      await signOut()
+    } catch (err) {
+      console.error(`Something went wrong!: ${err}`);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> = async (e) => {
+    e.preventDefault();
+    setIsLoading(true)
+    try {
+      const res = await signIn('credentials', {
+        email: 'verceluser@gmail.com',
+        password: 'password',
+      });
+      console.log({ res })
+    } catch (err) {
+      console.error(`Something went wrong!: ${err}`);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div
+      className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -20,8 +57,21 @@ export default function Home() {
             </code>
             .
           </li>
-          <li className="tracking-[-.01em]">
+          <li className="mb-2 tracking-[-.01em]">
             Save and see your changes instantly.
+          </li>
+          <li className="tracking-[-.01em]">
+            {!isLoading ? session?.authenticated ? (
+              <button onClick={logOutClick}>You are logged in as {session.user?.email}, log-out</button>
+            ) : (
+              <button
+                onClick={handleClick}
+              >
+                Login with credentials: email: verceluser@gmail.com password: password
+              </button>
+            ) : (
+              <>Loading...</>
+            )}
           </li>
         </ol>
 
