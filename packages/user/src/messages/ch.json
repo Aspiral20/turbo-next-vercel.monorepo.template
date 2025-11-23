@@ -1,0 +1,29 @@
+{
+  "homePage": {
+    "title": "你好，世界！"
+  },
+  "layout": {
+    "error": {
+      "description": "处理您的请求时出现问题。请刷新后重试。",
+      "message": "发生错误。",
+      "tryAgain": "再试一次"
+    }
+  },
+  "pages": {
+    "home": {
+      "actions": {
+        "deployNow": "立即部署",
+        "readOurDocs": "阅读文档"
+      },
+      "links": {
+        "examples": "示例",
+        "goToNextjs": "访问 nextjs.org",
+        "learn": "学习"
+      },
+      "textRow": {
+        "first": "用户微前端。",
+        "second": "使用 Next-Intl。"
+      }
+    }
+  }
+}

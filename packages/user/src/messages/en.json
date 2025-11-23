@@ -1,0 +1,29 @@
+{
+  "homePage": {
+    "title": "Hello world!"
+  },
+  "layout": {
+    "error": {
+      "description": "There was an issue processing your request. Refresh and try again.",
+      "message": "An error occurred.",
+      "tryAgain": "Try again"
+    }
+  },
+  "pages": {
+    "home": {
+      "actions": {
+        "deployNow": "Deploy now",
+        "readOurDocs": "Read our docs"
+      },
+      "links": {
+        "examples": "Examples",
+        "goToNextjs": "Go to nextjs.org",
+        "learn": "Learn"
+      },
+      "textRow": {
+        "first": "User Micro-Frontend.",
+        "second": "With Next-Intl."
+      }
+    }
+  }
+}
