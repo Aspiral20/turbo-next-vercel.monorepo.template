@@ -15,6 +15,7 @@
         "deployNow": "立即部署",
         "readOurDocs": "阅读文档"
       },
+      "link": "首页",
       "links": {
         "examples": "示例",
         "goToNextjs": "访问 nextjs.org",

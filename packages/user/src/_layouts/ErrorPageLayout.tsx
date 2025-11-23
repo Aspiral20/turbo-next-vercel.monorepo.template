@@ -62,7 +62,7 @@ const ErrorPageLayout: FC<ErrorProps> = ({
             width={16}
             height={16}
           />
-          {t('pages.home')}
+          {t('pages.home.link')}
         </Link>
       </div>
     </div>

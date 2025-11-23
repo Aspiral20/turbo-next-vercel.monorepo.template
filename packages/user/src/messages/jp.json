@@ -15,6 +15,7 @@
         "deployNow": "今すぐデプロイ",
         "readOurDocs": "ドキュメントを読む"
       },
+      "link": "ホームページ",
       "links": {
         "examples": "例",
         "goToNextjs": "nextjs.org へ移動",

@@ -15,6 +15,7 @@
         "deployNow": "Развернуть сейчас",
         "readOurDocs": "Читать документацию"
       },
+      "link": "Главная страница",
       "links": {
         "examples": "Примеры",
         "goToNextjs": "Перейти на nextjs.org",
