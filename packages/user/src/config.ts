@@ -1,5 +1,6 @@
-import { ConfigType, EnvsConfigType, MetadataConfigType } from '@/_types/config.types';
-import { NodeEnvEnum } from '@/_types/node_env.types';
+import { EnvsConfigChildrenType, LocalConfigType, MetadataConfigType } from '@/_types/config.types';
+import { EnvironmentEnum } from '@/_types/node_env.types';
+import { localHostNames } from 'shared/src/utils/constants/local_host_names'
 
 export const PROJECT_NAME = {
   words: {
@@ -8,7 +9,7 @@ export const PROJECT_NAME = {
   },
 };
 
-const commonEnvs: Omit<EnvsConfigType, 'ENV'> = {
+const commonEnvs: Omit<EnvsConfigChildrenType, 'ENV'> = {
   FRONT_URL: process.env.NEXT_PUBLIC_FRONT_URL ?? 'NEXT_PUBLIC_FRONT_URL',
   API_URL: process.env.NEXT_PUBLIC_API_URL ?? 'NEXT_PUBLIC_API_URL',
 }
@@ -16,31 +17,28 @@ const commonEnvs: Omit<EnvsConfigType, 'ENV'> = {
 /**
  * Config
  **/
-const envs: ConfigType<EnvsConfigType> = {
+const envs: LocalConfigType<EnvsConfigChildrenType> = {
   /** Only server **/
   server: {
     ENV: process.env.NEXT_PUBLIC_NEXT_ENV ?? 'NEXT_PUBLIC_NEXT_ENV',
     ...commonEnvs,
-    NEXT_AUTH_SECRET: process.env.NEXT_AUTH_SECRET ?? 'NEXT_AUTH_SECRET',
   },
   /** Only client **/
   local: {
-    ENV: NodeEnvEnum.local,
+    ENV: EnvironmentEnum.local,
     ...commonEnvs,
   },
   production: {
-    ENV: NodeEnvEnum.production,
+    ENV: EnvironmentEnum.production,
     ...commonEnvs,
   },
 };
 
-const localHostNames = ['localhost', '127.0.0.1', '192.168.0.8'];
-
-const processConfig = (config: ConfigType) => {
+const processConfig = (config: LocalConfigType<EnvsConfigChildrenType>) => {
   if (typeof window !== 'undefined') {
     const NEXT_PUBLIC_NEXT_ENV = process.env.NEXT_PUBLIC_NEXT_ENV;
     const { hostname } = window.location;
-    if (NEXT_PUBLIC_NEXT_ENV === NodeEnvEnum.production) {
+    if (NEXT_PUBLIC_NEXT_ENV === EnvironmentEnum.production) {
       return config.production;
     }
     if (localHostNames.indexOf(hostname) >= 0) {
@@ -53,7 +51,7 @@ const processConfig = (config: ConfigType) => {
 
 const getConfig = () => processConfig(envs);
 
-const config: EnvsConfigType = getConfig();
+const config: EnvsConfigChildrenType = getConfig();
 
 /**
  * Metadata
@@ -62,7 +60,7 @@ const mainTitle = `${PROJECT_NAME.words.first} ${PROJECT_NAME.words.second}`;
 
 const description = `${mainTitle} description`;
 
-const metadata: ConfigType<MetadataConfigType> = {
+const metadata: LocalConfigType<MetadataConfigType> = {
   server: {
     main: {
       title: `${mainTitle} ${config.ENV}`,
@@ -85,7 +83,7 @@ const metadata: ConfigType<MetadataConfigType> = {
 
 const getMetadata = () => {
   const NEXT_PUBLIC_NEXT_ENV = process.env.NEXT_PUBLIC_NEXT_ENV;
-  if (NEXT_PUBLIC_NEXT_ENV === NodeEnvEnum.production) {
+  if (NEXT_PUBLIC_NEXT_ENV === EnvironmentEnum.production) {
     return metadata.production;
   }
 
