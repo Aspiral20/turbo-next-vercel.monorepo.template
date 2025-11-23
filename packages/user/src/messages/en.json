@@ -15,6 +15,7 @@
         "deployNow": "Deploy now",
         "readOurDocs": "Read our docs"
       },
+      "link": "Home Page",
       "links": {
         "examples": "Examples",
         "goToNextjs": "Go to nextjs.org",
