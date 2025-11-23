@@ -1,0 +1,29 @@
+{
+  "homePage": {
+    "title": "こんにちは、世界！"
+  },
+  "layout": {
+    "error": {
+      "description": "リクエストの処理中に問題が発生しました。ページを更新してもう一度お試しください。",
+      "message": "エラーが発生しました。",
+      "tryAgain": "もう一度試す"
+    }
+  },
+  "pages": {
+    "home": {
+      "actions": {
+        "deployNow": "今すぐデプロイ",
+        "readOurDocs": "ドキュメントを読む"
+      },
+      "links": {
+        "examples": "例",
+        "goToNextjs": "nextjs.org へ移動",
+        "learn": "学ぶ"
+      },
+      "textRow": {
+        "first": "ユーザーマイクロフロントエンド。",
+        "second": "Next-Intl を使用。"
+      }
+    }
+  }
+}
