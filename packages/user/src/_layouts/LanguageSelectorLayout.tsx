@@ -28,7 +28,6 @@ const LanguageSelectorLayout: FC<LanguageSelectorLayoutProps> = ({}) => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  console.log(notDisplayed)
   const isNotDisplayed = useIsInRoute(notDisplayed);
 
   if (isNotDisplayed) {
