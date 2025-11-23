@@ -3,7 +3,7 @@ import React from 'react';
 import { ErrorPageLayout } from "@/_layouts";
 import { ErrorComponent } from "next/dist/client/components/error-boundary";
 
-const PageError: ErrorComponent = (props, deprecatedLegacyContext) => {
+const PageError: ErrorComponent = (props) => {
   return <ErrorPageLayout code={500} reset={props.reset}/>;
 };
 
