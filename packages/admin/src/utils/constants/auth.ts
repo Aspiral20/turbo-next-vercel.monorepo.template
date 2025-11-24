@@ -1,4 +1,4 @@
-import { AuthExpireTimeType } from '@/_types/auth.types';
+import { AuthExpireTimeType } from '@/_types/time/jwt_expire_time.types';
 
 /**
  *
