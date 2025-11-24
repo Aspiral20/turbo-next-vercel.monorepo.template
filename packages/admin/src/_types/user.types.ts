@@ -1,5 +1,5 @@
 export type UserType<OrType = string> = {
-  id: string | OrType;
+  id: string;
   email: string | OrType;
   role: (string & UserRolesEnum) | OrType;
   name: string | OrType;

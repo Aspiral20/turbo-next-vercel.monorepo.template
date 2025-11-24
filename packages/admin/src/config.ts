@@ -24,6 +24,8 @@ const envs: LocalConfigType<EnvsConfigChildrenType> = {
     ...commonEnvs,
     GITHUB_ID: process.env.GITHUB_ID ?? 'GITHUB_ID',
     GITHUB_SECRET: process.env.GITHUB_SECRET ?? 'GITHUB_SECRET',
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID ?? 'GOOGLE_CLIENT_ID',
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ?? 'GOOGLE_CLIENT_SECRET',
     NEXT_AUTH_SECRET: process.env.NEXT_AUTH_SECRET ?? 'NEXT_AUTH_SECRET',
   },
   /** Only client **/
