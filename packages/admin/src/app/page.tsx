@@ -49,25 +49,47 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
+        <ol className="font-mono flex flex-col gap-2 list-inside list-decimal text-sm/6 text-center sm:text-left">
+          <li className="tracking-[-.01em]">
             Admin Micro-Frontend.{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
               src/app/page.tsx
             </code>
             .
           </li>
-          <li className="mb-2 tracking-[-.01em]">
+          <li className="tracking-[-.01em]">
             Save and see your changes instantly.
           </li>
           <li className="tracking-[-.01em]">
             {!isLoading ? session?.authenticated ? (
-              <button onClick={logOutClick}>You are logged in as {session.user?.email}, log-out</button>
+              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
             ) : (
               <button
                 onClick={handleClick}
               >
                 Login with credentials: email: verceluser@gmail.com password: password
+              </button>
+            ) : (
+              <>Loading...</>
+            )}
+          </li>
+          <li className="tracking-[-.01em]">
+            {!isLoading ? session?.authenticated ? (
+              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
+            ) : (
+              <button onClick={() => signIn("github")}>
+                Login with GitHub
+              </button>
+            ) : (
+              <>Loading...</>
+            )}
+          </li>
+          <li className="tracking-[-.01em]">
+            {!isLoading ? session?.authenticated ? (
+              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
+            ) : (
+              <button onClick={() => signIn("google")}>
+                Login with Google
               </button>
             ) : (
               <>Loading...</>

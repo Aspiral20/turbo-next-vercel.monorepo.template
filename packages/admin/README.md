@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# View steps of implementation Next-Auth in `docs/NEXT-AUTH-ROADMAP.md`.
 
 ## Getting Started
 
