@@ -5,6 +5,7 @@ import { AUTH_EXPIRE_TIME } from '@/utils/constants/auth';
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { users } from "@/_data/users";
+import { routes } from "@/routes";
 
 /**
  * Credentials Roadmap: (request + credentials) => (authorize) => (jwt) => (session) => (frontend)
@@ -115,6 +116,6 @@ export const authOptions: NextAuthOptions = {
   },
   secret: config.NEXT_AUTH_SECRET,
   pages: {
-    signIn: '/login',
+    signIn: routes.login,
   },
 };
