@@ -18,7 +18,7 @@
     "turbo-unlink": "npx turbo unlink"
   },
   "devDependencies": {
-    "turbo": "^2.5.8"
+    "turbo": "^2.9.9"
   },
   "packageManager": "yarn@1.22.22",
   "workspaces": [

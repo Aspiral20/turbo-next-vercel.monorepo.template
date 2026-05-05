@@ -422,6 +422,36 @@
     postcss "^8.4.41"
     tailwindcss "4.1.15"
 
+"@turbo/darwin-64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/darwin-64/-/darwin-64-2.9.9.tgz#57325f8096c56bc2556763331454c72572d3c593"
+  integrity sha512-hTEiNu2ABZZOO1qbjnKASI8eF3BdOOzU6iKv5w5uGOK65DDMc10cS40N1kqM99YT0uSAGUwNu6GdFctRPeEeVA==
+
+"@turbo/darwin-arm64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/darwin-arm64/-/darwin-arm64-2.9.9.tgz#4134aeb4e0b8a31a4a0985463cc5938d562b6571"
+  integrity sha512-MinO40EEcP5mJiTVpfjtEulsEBhVeryfq21QhYtJZ8hQJLHGgy459rcmDVAY8/JERe4dkVU4KW+zoLF22o01EA==
+
+"@turbo/linux-64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/linux-64/-/linux-64-2.9.9.tgz#9c4c8c414e7f541e2b064895719851dd3ea51cb2"
+  integrity sha512-7JNLw88Isk+gMlbsC8pulLDkrqe2B827ZsKFEHilb17AC6Xn/62pzH7afjY7fEU6Ayp4XP/vGhlRWOzqBvBvIQ==
+
+"@turbo/linux-arm64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/linux-arm64/-/linux-arm64-2.9.9.tgz#0eff9560e1791b5a588bf526d6739d367c256e7c"
+  integrity sha512-0pnXDwPw1rHii98JZPRg7SvsjIzy7jrhkwGU9Jy5fVYoMdYd3P2vbtLfII+OJ0Mm4Ar5yykdHDTz3RWiRI1o9g==
+
+"@turbo/windows-64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/windows-64/-/windows-64-2.9.9.tgz#9fc72fd452a953833aa39718af1915dbe7f85fbe"
+  integrity sha512-vjDQycz4gQVvIq4n2rPtiiIESwJlAc406qtkiZlqyL+fHZEd9SxYNlBIFYtc5cuMuwrk+sIKrhN7XvwjmvS9YQ==
+
+"@turbo/windows-arm64@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@turbo/windows-arm64/-/windows-arm64-2.9.9.tgz#3dc7821b2d123537845942c34e1d78b39d9d7c7e"
+  integrity sha512-V6NiH43oCctepbOdQFp7UjqLyK8p6Tt824QA+G4TE+B1BBHu80A0W8OCL+H7uBJ3XZjAj/hvPDw3k3l65DoDGw==
+
 "@tybys/wasm-util@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.10.1.tgz#ecddd3205cf1e2d5274649ff0eedd2991ed7f414"
@@ -886,47 +916,17 @@ tslib@^2.4.0, tslib@^2.8.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
-turbo-darwin-64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/turbo-darwin-64/-/turbo-darwin-64-2.5.8.tgz#9c4c09374bce747ed7b26f5cdc156fdfb3583e9d"
-  integrity sha512-Dh5bCACiHO8rUXZLpKw+m3FiHtAp2CkanSyJre+SInEvEr5kIxjGvCK/8MFX8SFRjQuhjtvpIvYYZJB4AGCxNQ==
-
-turbo-darwin-arm64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-2.5.8.tgz"
-  integrity sha512-f1H/tQC9px7+hmXn6Kx/w8Jd/FneIUnvLlcI/7RGHunxfOkKJKvsoiNzySkoHQ8uq1pJnhJ0xNGTlYM48ZaJOQ==
-
-turbo-linux-64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/turbo-linux-64/-/turbo-linux-64-2.5.8.tgz#a5f22e8436907c84a058c46a9a3e4b1ed03f2ab9"
-  integrity sha512-hMyvc7w7yadBlZBGl/bnR6O+dJTx3XkTeyTTH4zEjERO6ChEs0SrN8jTFj1lueNXKIHh1SnALmy6VctKMGnWfw==
-
-turbo-linux-arm64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/turbo-linux-arm64/-/turbo-linux-arm64-2.5.8.tgz#5c49aed3c2de4c9482d14545809ca559257d4493"
-  integrity sha512-LQELGa7bAqV2f+3rTMRPnj5G/OHAe2U+0N9BwsZvfMvHSUbsQ3bBMWdSQaYNicok7wOZcHjz2TkESn1hYK6xIQ==
-
-turbo-windows-64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/turbo-windows-64/-/turbo-windows-64-2.5.8.tgz#c9042bc181b732e5a1ab824d6549ad7d358594f5"
-  integrity sha512-3YdcaW34TrN1AWwqgYL9gUqmZsMT4T7g8Y5Azz+uwwEJW+4sgcJkIi9pYFyU4ZBSjBvkfuPZkGgfStir5BBDJQ==
-
-turbo-windows-arm64@2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/turbo-windows-arm64/-/turbo-windows-arm64-2.5.8.tgz#d252d3924412d8590d58830e5d4b5f05def81af3"
-  integrity sha512-eFC5XzLmgXJfnAK3UMTmVECCwuBcORrWdewoiXBnUm934DY6QN8YowC/srhNnROMpaKaqNeRpoB5FxCww3eteQ==
-
-turbo@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.npmjs.org/turbo/-/turbo-2.5.8.tgz"
-  integrity sha512-5c9Fdsr9qfpT3hA0EyYSFRZj1dVVsb6KIWubA9JBYZ/9ZEAijgUEae0BBR/Xl/wekt4w65/lYLTFaP3JmwSO8w==
+turbo@^2.9.9:
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/turbo/-/turbo-2.9.9.tgz#cc7d66824dee1fe16accc1bc754356b5c7f0960c"
+  integrity sha512-3xfzXE/yTjhh0S5dIWlE+3E+J9A09REpLI1ZqVh2+HrNZoVzZn0pkvjiRgVK/Ev3PF9XnaTwCntTx+CADWXcyA==
   optionalDependencies:
-    turbo-darwin-64 "2.5.8"
-    turbo-darwin-arm64 "2.5.8"
-    turbo-linux-64 "2.5.8"
-    turbo-linux-arm64 "2.5.8"
-    turbo-windows-64 "2.5.8"
-    turbo-windows-arm64 "2.5.8"
+    "@turbo/darwin-64" "2.9.9"
+    "@turbo/darwin-arm64" "2.9.9"
+    "@turbo/linux-64" "2.9.9"
+    "@turbo/linux-arm64" "2.9.9"
+    "@turbo/windows-64" "2.9.9"
+    "@turbo/windows-arm64" "2.9.9"
 
 typescript@^5:
   version "5.9.3"
