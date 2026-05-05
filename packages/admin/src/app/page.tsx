@@ -3,6 +3,8 @@ import { MouseEventHandler, useState } from "react";
 import { signIn, useSession } from "next-auth/react"
 import { signOut } from "next-auth/react"
 import Image from "next/image";
+import { routes } from "@/routes";
+import Link from "next/link";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -13,23 +15,7 @@ export default function Home() {
     e.preventDefault();
     setIsLoading(true)
     try {
-      await signOut()
-    } catch (err) {
-      console.error(`Something went wrong!: ${err}`);
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
-  const handleClick: MouseEventHandler<HTMLButtonElement> = async (e) => {
-    e.preventDefault();
-    setIsLoading(true)
-    try {
-      const res = await signIn('credentials', {
-        email: 'verceluser@gmail.com',
-        password: 'password',
-      });
-      console.log({ res })
+      await signOut();
     } catch (err) {
       console.error(`Something went wrong!: ${err}`);
     } finally {
@@ -61,36 +47,13 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
           <li className="tracking-[-.01em]">
-            {!isLoading ? session?.authenticated ? (
-              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
+            {!isLoading ? !session?.authenticated ? (
+              <Link href={routes.login}>
+                Login
+              </Link>
             ) : (
-              <button
-                onClick={handleClick}
-              >
-                Login with credentials: email: verceluser@gmail.com password: password
-              </button>
-            ) : (
-              <>Loading...</>
-            )}
-          </li>
-          <li className="tracking-[-.01em]">
-            {!isLoading ? session?.authenticated ? (
-              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
-            ) : (
-              <button onClick={() => signIn("github")}>
-                Login with GitHub
-              </button>
-            ) : (
-              <>Loading...</>
-            )}
-          </li>
-          <li className="tracking-[-.01em]">
-            {!isLoading ? session?.authenticated ? (
-              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider: "{session?.provider?.provider}", log-out</button>
-            ) : (
-              <button onClick={() => signIn("google")}>
-                Login with Google
-              </button>
+              <button onClick={logOutClick}>You are logged in as {session.user?.email}, provider:
+                "{session?.provider?.provider}", log-out</button>
             ) : (
               <>Loading...</>
             )}
