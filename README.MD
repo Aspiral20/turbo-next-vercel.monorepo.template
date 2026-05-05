@@ -2,6 +2,26 @@
 
 The template is based on [Turbo](https://turborepo.com/) and `micro-frontends` using [Next.js](https://nextjs.org/) with deployment on [Vercel](https://vercel.com/).
 
+<!-- Here, I've added schematic. -->
+```
+/
+└── main
+    ├── feat/next-auth (admin)
+    │   ├── feat/next-intl-auth (admin + core)
+    └── feat/next-intl (core)
+```
+
+Each branch represents a pre-configured starting point you can check out depending on what features you need:
+
+| Branch | Packages affected | What it adds |
+| ------ | ----------------- | ------------ |
+| `main` | — | Bare monorepo scaffold — no auth, no i18n |
+| `feat/next-auth` | `admin` | Adds [NextAuth.js](https://next-auth.js.org/) authentication to the admin app |
+| `feat/next-intl` | `core` | Adds [next-intl](https://next-intl-docs.vercel.app/) internationalisation to the core app |
+| `feat/next-intl-auth` | `admin` + `core` | Combines both — auth on admin and i18n on core |
+
+Start from `main` if you want a clean slate. Check out `feat/next-intl-auth` if you need both features out of the box. The feature branches are kept in sync with `main` so you can always cherry-pick changes back.
+
 ## All Technologies
 
 - Package Manager: [Yarn](https://yarnpkg.com/)
