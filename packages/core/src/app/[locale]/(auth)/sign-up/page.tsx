@@ -22,6 +22,7 @@ type FormValues = {
   email: string;
   password: string;
   confirmPassword: string;
+  terms: boolean;
 };
 
 export default function SignUpPage() {
@@ -125,6 +126,36 @@ export default function SignUpPage() {
             })}
           />
           {errors.confirmPassword && <p className={errorCls}>{errors.confirmPassword.message}</p>}
+        </div>
+
+        <div className="space-y-2">
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              id="terms"
+              type="checkbox"
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#1A6FFF] focus:ring-[#1A6FFF] accent-[#1A6FFF]"
+              {...register('terms', { required: 'You must accept the Terms and Conditions and Privacy Policy.' })}
+            />
+            <span className="text-sm text-gray-600 dark:text-gray-300 leading-snug">
+              I agree to the{' '}
+              <Link
+                href={routes.i18n.termsAndConditions}
+                target="_blank"
+                className="text-[#1A6FFF] hover:text-[#1557CC] transition-colors underline underline-offset-2"
+              >
+                Terms and Conditions
+              </Link>{' '}
+              and{' '}
+              <Link
+                href={routes.i18n.privacyPolicy}
+                target="_blank"
+                className="text-[#1A6FFF] hover:text-[#1557CC] transition-colors underline underline-offset-2"
+              >
+                Privacy Policy
+              </Link>
+            </span>
+          </label>
+          {errors.terms && <p className={errorCls}>{errors.terms.message}</p>}
         </div>
 
         <div className="pt-1">

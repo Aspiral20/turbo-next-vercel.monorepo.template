@@ -12,12 +12,14 @@ const secureLogin: Array<InRouteType> = [
   { routeType: 'regexp', route: new RegExp(/\/login.*/) },
   { routeType: 'regexp', route: new RegExp(/\/forgot-password.*/) },
   { routeType: 'regexp', route: new RegExp(/\/sign-up.*/) },
-  { routeType: 'string', route: routes.i18n.self },
 ]
 
 // Routes accessible without authentication (no redirect to /login)
 const openRoutes: Array<InRouteType> = [
   { routeType: 'regexp', route: new RegExp(/\/verify-email.*/) },
+  { routeType: 'string', route: routes.i18n.self },
+  { routeType: 'string', route: routes.i18n.termsAndConditions },
+  { routeType: 'string', route: routes.i18n.privacyPolicy },
 ]
 
 // Dashboard routes that require email verification

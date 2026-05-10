@@ -30,6 +30,8 @@ export const routes = {
           notifications: `/${locale}/dashboard/settings/notifications`,
         },
       },
+      privacyPolicy: `/${locale}/privacy-policy`,
+      termsAndConditions: `/${locale}/terms-and-conditions`,
     }),
   },
   i18n: {
@@ -59,5 +61,7 @@ export const routes = {
         notifications: '/dashboard/settings/notifications',
       },
     },
+    privacyPolicy: '/privacy-policy',
+    termsAndConditions: '/terms-and-conditions',
   }
 };
