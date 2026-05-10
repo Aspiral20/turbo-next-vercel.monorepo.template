@@ -139,12 +139,11 @@ export const apiInterceptor = (
         return res.data;
       },
       putApiData: async <DataType = any>(url: string, body: any, props?: ApiInterceptorDataType): Promise<DataType> => {
-        // const genProps = await withAuthApiConfig({
-        //   props,
-        //   externAccessKey: props?.externAccessKey ? props?.externAccessKey : undefined,
-        //   withAuth,
-        // });
         const res = await usedInstance?.instance.put(url, body, props);
+        return res.data;
+      },
+      patchApiData: async <DataType = any>(url: string, body: any, props?: ApiInterceptorDataType): Promise<DataType> => {
+        const res = await usedInstance?.instance.patch(url, body, props);
         return res.data;
       },
       deleteApiData: async <DataType = any>(url: string, props?: ApiInterceptorDataType): Promise<DataType> => {
@@ -164,7 +163,7 @@ export const apiInterceptor = (
 
 /** Used in "fetch" directory
  *
- * proxmox.self => /api/proxmox/route
+ * /api
  *
  **/
 const endpoints: EndpointsType = {
@@ -172,9 +171,21 @@ const endpoints: EndpointsType = {
   },
   intern: {
     axiosNextInstance: {
-      // info: {
-      //   self: '/info',
-      // },
+      auth: {
+        forgotPassword: '/auth/forgot-password',
+        resetPassword: '/auth/reset-password',
+        signUp: '/auth/sign-up',
+        verifyEmail: '/auth/verify-email',
+        resendVerification: '/auth/resend-verification',
+      },
+      users: {
+        profile: '/users/profile',
+        changePassword: '/users/change-password',
+      },
+      onboarding: '/onboarding',
+      settings: {
+        apiKeys: '/settings/api-keys',
+      },
     },
   },
 };

@@ -76,7 +76,7 @@ packages=(
 "lucide-react"
 "motion"
 "next-themes"
-"react-day-picker"
+"react-day-picker@^9.14.0"
 "react-hook-form"
 "react-resizable-panels"
 "recharts"

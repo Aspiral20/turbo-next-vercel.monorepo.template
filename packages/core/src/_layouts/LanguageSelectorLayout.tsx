@@ -17,8 +17,8 @@ import { routes } from "@/routes";
  **/
 const notDisplayed: Array<InRouteType> = [
   // Similar with: { routeType: 'regexp', route: new RegExp(/\/second\/.*/) } - without external variable.
-  { routeType: 'regexp', route: new RegExp(`${routes.i18n.third.self}/.*`) },
-  { routeType: 'string', route: routes.i18n.second },
+  // { routeType: 'regexp', route: new RegExp(`${routes.i18n.third.self}/.*`) },
+  // { routeType: 'string', route: routes.i18n.second },
 ]
 
 interface LanguageSelectorLayoutProps {

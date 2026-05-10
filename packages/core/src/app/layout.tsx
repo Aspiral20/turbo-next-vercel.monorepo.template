@@ -1,4 +1,5 @@
-import "./globals.css";
+/** Global styles */
+import "@/styles/globals.css";
 
 export default function BootstrapLayout({
   children,
